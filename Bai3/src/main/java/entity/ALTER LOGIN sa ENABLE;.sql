@@ -1,0 +1,11 @@
+ALTER LOGIN sa ENABLE;
+GO
+
+ALTER LOGIN sa WITH PASSWORD = '123123';
+GO
+SELECT 
+    name,
+    is_disabled
+FROM sys.sql_logins
+WHERE name = 'sa';
+SELECT SERVERPROPERTY('IsIntegratedSecurityOnly') AS WindowsOnly;
